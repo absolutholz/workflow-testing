@@ -21,9 +21,9 @@ jobs:
       matrix:
         include:
           - app-name: mysixt
-            secret: foo
+            secret: ${{ secrets.CHANNEL_MYSIXT }}
           - app-name: phoenix
-            secret: bar
+            secret: ${{ secrets.CHANNEL_PHOENIX }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
