@@ -18,7 +18,9 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     strategy:
+    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix
       matrix:
+        environment: [dev, stage, prod]
         include:
         # Reference secrets through matrix
         # https://sbulav.github.io/terraform/github-actions-matrix-secrets/
@@ -34,5 +36,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, ${{ matrix.app-name }}! I know your secret ${{ secrets[matrix.secret-key] }}
+        run: echo Hello, ${{ matrix.app-name }}! I know your ${{ matrix.environment }} secret ${{ secrets[matrix.secret-key] }}
 
