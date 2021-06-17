@@ -21,7 +21,9 @@ jobs:
       matrix:
         include:
           - app-name: mysixt
+            secret: foo
           - app-name: phoenix
+            secret: bar
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
