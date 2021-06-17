@@ -20,6 +20,8 @@ jobs:
     strategy:
       matrix:
         include:
+        # Reference secrets through matrix
+        # https://sbulav.github.io/terraform/github-actions-matrix-secrets/
           - app-name: mysixt
             secret-key: CHANNEL_MYSIXT
           - app-name: phoenix
