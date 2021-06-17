@@ -32,5 +32,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, ${{ matrix.app-name }}!
+        run: echo Hello, ${{ matrix.app-name }}! I know your secret ${{ matrix.secret }}
 
