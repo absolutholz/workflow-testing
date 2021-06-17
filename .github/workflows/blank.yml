@@ -19,7 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [mysixt, phoenix]
+        include:
+          - app-name: mysixt
+          - app-name: phoenix
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,5 +30,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, ${{ matrix.app }}!
+        run: echo Hello, ${{ matrix.app-name }}!
 
