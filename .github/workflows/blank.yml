@@ -20,10 +20,11 @@ jobs:
     strategy:
     # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix
       matrix:
+        app-name: [mysixt, phoenix]
         environment: [dev, stage, prod]
         include:
-        # Reference secrets through matrix
-        # https://sbulav.github.io/terraform/github-actions-matrix-secrets/
+          # Reference secrets through matrix
+          # https://sbulav.github.io/terraform/github-actions-matrix-secrets/
           - app-name: mysixt
             secret-key: CHANNEL_MYSIXT
           - app-name: phoenix
