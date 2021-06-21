@@ -1,0 +1,21 @@
+name: WebApp Release
+
+on:
+    workflow_dispatch:
+        inputs:
+            app-name:
+                description: 'WebApp (e.g. "phoenix" or "mysixt")'
+                required: true
+            something-dropdown:
+                description: 'This is more or less a test for dropdown'
+                required: false
+                options: ['mysixt', 'phoenix']
+                default: 'mysixt'
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Commit Hash
+              run: |
+                  echo "Commit Hash: ${{ github.event.inputs.app-name }}"
